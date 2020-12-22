@@ -1,7 +1,8 @@
-#include<iostream>
+п»ї#include<iostream>
 #include<cmath>
 const int QUANTITY_Y = 6;
 const int QUANTITY_X = 3;
+
 
 double MatrixElem(unsigned int, unsigned int, double[QUANTITY_Y][QUANTITY_X]);
 double CalcB(unsigned short, double[QUANTITY_Y], double[QUANTITY_Y][QUANTITY_X]);
@@ -34,7 +35,7 @@ double CalcB(unsigned short n, double Y[QUANTITY_Y], double BazF[QUANTITY_Y][QUA
 	return result;
 }
 
-//Переделать под универсальный формат!!!
+
 double* GaussMethod(double Matrix[3][4])
 {
 	double* result = new double[3];
@@ -82,8 +83,8 @@ void AproksimFunction()
 		Matrix[i][3] = CalcB(i+1, Y, BazF);
 	}
 
-	//Вывод изначальной матрицы
-	std::cout << "Изначальная матрица\n";
+	//Р’С‹РІРѕРґ РёР·РЅР°С‡Р°Р»СЊРЅРѕР№ РјР°С‚СЂРёС†С‹
+	std::cout << "РР·РЅР°С‡Р°Р»СЊРЅР°СЏ РјР°С‚СЂРёС†Р°\n";
 	for (unsigned short i(0); i < 3; i++)
 	{
 		for (unsigned short j(0); j < 4; j++)
@@ -103,8 +104,8 @@ void AproksimFunction()
 		J += pow(sigma[i], 2);
 	}
 
-	//Отсюда идет вывод данных
-	std::cout << "\nМатрица после обработки\n";
+	//РћС‚СЃСЋРґР° РёРґРµС‚ РІС‹РІРѕРґ РґР°РЅРЅС‹С…
+	std::cout << "\nРњР°С‚СЂРёС†Р° РїРѕСЃР»Рµ РѕР±СЂР°Р±РѕС‚РєРё\n";
 	for (unsigned short i(0); i < 3; i++)
 	{
 		for (unsigned short j(0); j < 4; j++)
@@ -113,19 +114,19 @@ void AproksimFunction()
 		}
 		std::cout << std::endl;
 	}
-	std::cout << "\nX,Y и Z в результате выполнения метода Гаусса\n";
+	std::cout << "\nX,Y Рё Z РІ СЂРµР·СѓР»СЊС‚Р°С‚Рµ РІС‹РїРѕР»РЅРµРЅРёСЏ РјРµС‚РѕРґР° Р“Р°СѓСЃСЃР°\n";
 	for (unsigned short i(0); i < 3; i++)
 	{
 		std::cout << *(answers + i) << " ";
 	}
 	std::cout << "\n";
-	std::cout << "\nЗначения апрокс. функций\n";
+	std::cout << "\nР—РЅР°С‡РµРЅРёСЏ Р°РїСЂРѕРєСЃ. С„СѓРЅРєС†РёР№\n";
 	for (unsigned short i(0); i < QUANTITY_Y; i++)
 	{
 		std::cout << f[i] << " ";
 	}
 	std::cout << "\n";
-	std::cout << "\nЗначения сигмы\n";
+	std::cout << "\nР—РЅР°С‡РµРЅРёСЏ СЃРёРіРјС‹\n";
 	for (unsigned short i(0); i < QUANTITY_Y; i++)
 	{
 		std::cout << sigma[i] << " ";
